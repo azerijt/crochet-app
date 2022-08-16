@@ -4,11 +4,10 @@ import StitchCalculator from "./components/StitchCalculator";
 function App(): JSX.Element {
   return (
     <div>
-  < Header />
-  <StitchCalculator />
+      <Header />
+      <StitchCalculator />
     </div>
-
-  )
+  );
 }
 
 export default App;
