@@ -1,7 +1,14 @@
-import { greet } from "./utils/greet";
+import Header from "./components/Header";
+import StitchCalculator from "./components/StitchCalculator";
 
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  return (
+    <div>
+  < Header />
+  <StitchCalculator />
+    </div>
+
+  )
 }
 
 export default App;
