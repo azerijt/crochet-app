@@ -38,9 +38,12 @@ export default function StitchCalculator(): JSX.Element {
   }
 
   return (
-    <div>
-      <div>
-        <h2> Calculate Stitch Size</h2>
+    <div className="calculator" >
+         <h2> Calculate Stitch Size</h2>
+      <div className="items" >
+        <div>
+        <div >
+     
         <h3> Stitch Width Calculator</h3>
         <p>Enter gauge width in CM:</p>
         <input
@@ -83,11 +86,14 @@ export default function StitchCalculator(): JSX.Element {
           </p>
         ) : null}
       </div>
+      </div>
+   
       <PatternCalculator
         stitchName=" "
         stitchHeight={stitchSize.stitchHeight}
         stitchWidth={stitchSize.stitchWidth}
       />
+    </div>
     </div>
   );
 }

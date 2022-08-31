@@ -1,6 +1,6 @@
 export default function Header(): JSX.Element {
   return (
-    <div>
+    <div >
       <h1>Crochet Calculator</h1>
     </div>
   );
