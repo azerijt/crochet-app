@@ -47,5 +47,4 @@ export default function PatternCalculator(
       ) : null}
     </div>
   );
-  
 }
