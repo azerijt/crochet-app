@@ -38,56 +38,61 @@ export default function StitchCalculator(): JSX.Element {
   }
 
   return (
-    <div>
-      <div>
-        <h2> Calculate Stitch Size</h2>
-        <h3> Stitch Width Calculator</h3>
-        <p>Enter gauge width in CM:</p>
-        <input
-          placeholder="enter width of gauge in CM"
-          onChange={(e) => setWidthCM(e.target.value)}
-          value={widthCM}
-        ></input>
-        <p>Enter number of chain stitches: </p>
-        <input
-          placeholder="enter stitch count"
-          onChange={(e) => setChainCount(e.target.value)}
-          value={chainCount}
-        ></input>
-        <button onClick={onWidthClick}>Calculate Stitch Width</button>
+    <div className="calculator">
+      <h2> Calculate Stitch Size</h2>
+      <div className="items">
+        <div>
+          <div>
+            <h3> Stitch Width Calculator</h3>
+            <p>Enter gauge width in CM:</p>
+            <input
+              placeholder="enter width of gauge in CM"
+              onChange={(e) => setWidthCM(e.target.value)}
+              value={widthCM}
+            ></input>
+            <p>Enter number of chain stitches: </p>
+            <input
+              placeholder="enter stitch count"
+              onChange={(e) => setChainCount(e.target.value)}
+              value={chainCount}
+            ></input>
+            <button onClick={onWidthClick}>Calculate Stitch Width</button>
 
-        {stitchWidth ? <p> Stitch Width: {stitchWidth}cm</p> : null}
-      </div>
+            {stitchWidth ? <p> Stitch Width: {stitchWidth}cm</p> : null}
+          </div>
 
-      <div>
-        <h3>Stitch Height Calculator</h3>
-        <p>Enter gauge height in CM:</p>
-        <input
-          placeholder="enter height in CM "
-          onChange={(e) => setHeightCM(e.target.value)}
-          value={heightCM}
-        ></input>
-        <p>Enter number of rows: </p>
-        <input
-          placeholder="enter number of rows"
-          onChange={(e) => setRowCount(e.target.value)}
-          value={rowCount}
-        ></input>
-        <button onClick={onHeightClick}>Calculate Stitch Height</button>
-        {stitchHeight ? <p>Stitch Height: {stitchHeight}cm</p> : null}
-        <button onClick={saveStitchClick}>Save Stitch</button>
-        {stitchSize ? (
-          <p>
-            Stitch {stitchSize.stitchName}: {stitchSize.stitchWidth} x{" "}
-            {stitchSize.stitchHeight} cm
-          </p>
-        ) : null}
+          <div>
+            <h3>Stitch Height Calculator</h3>
+            <p>Enter gauge height in CM:</p>
+            <input
+              placeholder="enter height in CM "
+              onChange={(e) => setHeightCM(e.target.value)}
+              value={heightCM}
+            ></input>
+            <p>Enter number of rows: </p>
+            <input
+              placeholder="enter number of rows"
+              onChange={(e) => setRowCount(e.target.value)}
+              value={rowCount}
+            ></input>
+            <button onClick={onHeightClick}>Calculate Stitch Height</button>
+            {stitchHeight ? <p>Stitch Height: {stitchHeight}cm</p> : null}
+            <button onClick={saveStitchClick}>Save Stitch</button>
+            {stitchSize ? (
+              <p>
+                Stitch {stitchSize.stitchName}: {stitchSize.stitchWidth} x{" "}
+                {stitchSize.stitchHeight} cm
+              </p>
+            ) : null}
+          </div>
+        </div>
+
+        <PatternCalculator
+          stitchName=" "
+          stitchHeight={stitchSize.stitchHeight}
+          stitchWidth={stitchSize.stitchWidth}
+        />
       </div>
-      <PatternCalculator
-        stitchName=" "
-        stitchHeight={stitchSize.stitchHeight}
-        stitchWidth={stitchSize.stitchWidth}
-      />
     </div>
   );
 }

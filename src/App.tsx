@@ -3,7 +3,7 @@ import StitchCalculator from "./components/StitchCalculator";
 
 function App(): JSX.Element {
   return (
-    <div>
+    <div className="container">
       <Header />
       <StitchCalculator />
     </div>

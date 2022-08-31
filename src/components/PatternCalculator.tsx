@@ -22,7 +22,7 @@ export default function PatternCalculator(
   }
 
   return (
-    <div>
+    <div className="pattern">
       <h2> Pattern Calculator</h2>
       <p> Enter desired pattern width CM: </p>
       <input
